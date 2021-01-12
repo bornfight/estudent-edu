@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NotificationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=NotificationRepository::class)
@@ -19,16 +20,22 @@ class Notification
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank()
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
+     *
+     * @Assert\NotNull()
      */
     private $createdAt;
 
