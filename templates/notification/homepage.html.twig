@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <h1 class="mt-2">Notifications</h1>
+
+    {% for notification in notifications %}
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title">{{ notification.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ notification.createdAt|date("d.m.Y.") }}</h6>
+                <p class="card-text">{{ notification.content }}</p>
+                <a href="{{ path("notification_single", {id: notification.id}) }}" class="btn btn-primary">More</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
