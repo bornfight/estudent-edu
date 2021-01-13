@@ -83,8 +83,9 @@ class NotificationController extends AbstractController
             return $this->redirectToRoute('admin_notification_list');
         }
 
-        return $this->render('admin/notification/new.html.twig', [
+        return $this->render('admin/notification/edit.html.twig', [
             'form' => $form->createView(),
+            'notification' => $notification
         ]);
     }
 
